@@ -1,6 +1,7 @@
 import React, {useEffect, useContext, useState} from 'react';
 import { SocketContext } from "../providers/SocketProvider";
 import styled from 'styled-components';
+import YellAtDog from './YellAtDog';
 
 const Watch = () => {
   const { socket } = useContext(SocketContext);
@@ -17,13 +18,19 @@ const Watch = () => {
       socket.disconnect();}
   }, [])
 
+
   return (
-      <>
+      <Wrapper>
+        <YellAtDog />
         <Flex image={image} />
-      </>
+        <div>
+        </div>
+      </Wrapper>
   )
 }
+const Wrapper = styled.div`
 
+`
 
 const Flex = styled.div`
   background: url(${p => p.image}) no-repeat top;
