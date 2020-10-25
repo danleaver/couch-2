@@ -25,9 +25,8 @@ const Watch = () => {
 }
 
 const StyledImage = styled.img`
-  // height: 100vh;
-  width: 100vw;
-  max-height: 100vh;
-  max-width: 100vw;
+  height: auto;
+  min-width: 300px;
+  max-width: 100%;
 `
 export default Watch
