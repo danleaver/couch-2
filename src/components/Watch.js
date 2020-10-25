@@ -19,7 +19,7 @@ const Watch = () => {
 
   return (
       <>
-        Hello
+        Hello There
         <Flex image={image} />
       </>
   )
