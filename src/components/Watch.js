@@ -18,14 +18,14 @@ const Watch = () => {
   }, [])
 
   return (
-      <Flex image={image} />
+      <>
+        Hello
+        <Flex image={image} />
+      </>
   )
 }
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`
+
 const Flex = styled.div`
   background: url(${p => p.image}) no-repeat top;
   background-size: contain;
