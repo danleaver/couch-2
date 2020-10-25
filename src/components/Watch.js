@@ -28,5 +28,6 @@ const StyledImage = styled.img`
   height: auto;
   min-width: 100%;
   max-width: 100%;
+  max-height: 100vh;
 `
 export default Watch
