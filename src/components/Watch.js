@@ -18,16 +18,19 @@ const Watch = () => {
   }, [])
 
   return (
-    <div>
-      <StyledImage style={{border:"1px solid red"}} src={image} />
-    </div>
+      <Flex image={image} />
   )
 }
 
-const StyledImage = styled.img`
-  height: auto;
-  min-width: 100%;
-  max-width: 100%;
-  max-height: 100vh;
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `
+const Flex = styled.div`
+  background: url(${p => p.image}) no-repeat top;
+  background-size: contain;
+  height: 100vh;
+  width: 100vw;
+`
+
 export default Watch
