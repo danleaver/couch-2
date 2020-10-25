@@ -26,7 +26,7 @@ const Watch = () => {
 
 const StyledImage = styled.img`
   height: auto;
-  min-width: 300px;
+  min-width: 100%;
   max-width: 100%;
 `
 export default Watch
