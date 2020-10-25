@@ -1,6 +1,6 @@
 import React, {useEffect, useContext, useState} from 'react';
 import { SocketContext } from "../providers/SocketProvider";
-
+import styled from 'styled-components';
 
 const Watch = () => {
   const { socket } = useContext(SocketContext);
@@ -19,9 +19,12 @@ const Watch = () => {
 
   return (
     <div>
-      <img style={{border:"1px solid red"}} src={image} />
+      <StyledImage style={{border:"1px solid red"}} src={image} />
     </div>
   )
 }
 
+const StyledImage = styled.img`
+  height: 100vh;
+`
 export default Watch
