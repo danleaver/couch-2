@@ -10,14 +10,14 @@ function Camera() {
   const { socket } = useContext(SocketContext);
   
   useEffect(() => {
-     socket.on("stream", imagestream => {
+    socket.on("stream", imagestream => {
       setImage(imagestream);
     });
     socket.on("message", data => {
       console.log("new msg: ", data)
       setResponse(data)
     })
-    socket.send("FUCKIT")
+    socket.send("FUCKIT") //dont need this
 
     const canvas = preview.current
     const context = canvas.getContext('2d')

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { SocketContext } from "../providers/SocketProvider";
 import Camera from "./Camera";
+import PlaySound from "./PlaySound";
 
 function Home() {
   const [ clientStatus, setClientStatus ] = useState(null)
@@ -31,9 +32,15 @@ function Home() {
 
   return (
     <>
-     {showWebCam && <Camera/>}
+      TESTING
+      {showWebCam && 
+        <>
+          <PlaySound />
+          <Camera/>
+        </>
+      }
     </>
-  );
+  )
 }
 
 export default Home;

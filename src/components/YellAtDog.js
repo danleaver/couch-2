@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useContext }from 'react';
 import styled from 'styled-components';
+import { SocketContext } from '../providers/SocketProvider';
+
 const YellAtDog = () => {
+  const { socket } = useContext(SocketContext);
+
+
 
   const recordAudio = () =>
     new Promise(async resolve => {
@@ -18,10 +23,16 @@ const YellAtDog = () => {
         new Promise(resolve => {
           mediaRecorder.addEventListener("stop", () => {
             const audioBlob = new Blob(audioChunks);
+            // const audioBuffer = new ArrayBuffer(audioChunks)
+            // console.log("array buffer: ", audioBuffer)
+            console.log("blob: ", audioBlob)
+            socket.emit('sound', audioBlob)
             const audioUrl = URL.createObjectURL(audioBlob);
-            const audio = new Audio(audioUrl);
-            const play = () => audio.play();
-            resolve({ audioBlob, audioUrl, play });
+            // socket.emit('sound', audioUrl)
+            // const audio = new Audio(audioUrl);
+            // const play = () => audio.play();
+            // resolve({ audioBlob, audioUrl, play });
+            resolve({ audioBlob, audioUrl });
           });
 
           mediaRecorder.stop();
@@ -37,7 +48,7 @@ const YellAtDog = () => {
       recorder.start();
       await sleep(3000);
       const audio = await recorder.stop();
-      audio.play();
+      // audio.play();
     })();
   }
 

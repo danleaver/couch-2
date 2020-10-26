@@ -28,6 +28,10 @@ io.on("connection", (socket) => {
     socket.broadcast.emit('stream', data)
   })
 
+  socket.on('sound', data => {
+    socket.broadcast.emit('sound', data)
+  })
+
   socket.on('message', data => {
     console.log(data)
     socket.broadcast.emit('message', data)
