@@ -29,6 +29,7 @@ io.on("connection", (socket) => {
   })
 
   socket.on('sound', data => {
+    console.log("sound received on server")
     socket.broadcast.emit('sound', data)
   })
 
